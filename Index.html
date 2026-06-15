@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiến Tạo Dòng Tiền Tự Do Sớm</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#faf7f2;color:#1a0a0a;min-height:100vh}
+.page{max-width:520px;margin:0 auto;padding:0 0 4rem}
+
+/* ── OPENING ── */
+.opening{padding:2.5rem 1.5rem 2rem;border-bottom:1px solid rgba(0,0,0,.08)}
+.opening-questions{margin-bottom:2rem}
+.q-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.1rem}
+.q-dot{width:6px;height:6px;border-radius:50%;background:#b91c1c;flex-shrink:0;margin-top:8px}
+.q-text{font-size:15px;color:#374151;line-height:1.65}
+.q-text em{color:#b91c1c;font-style:normal;font-weight:700}
+
+.divider-line{display:flex;align-items:center;gap:12px;margin:1.75rem 0}
+.divider-line::before,.divider-line::after{content:'';flex:1;height:1px;background:rgba(0,0,0,.12)}
+.divider-line span{font-size:12px;color:#9ca3af;white-space:nowrap;letter-spacing:1.5px;text-transform:uppercase}
+
+.reveal-text{font-size:14px;color:#6b7280;line-height:1.9;margin-bottom:1.25rem}
+.reveal-text strong{color:#111827;font-weight:700}
+.reveal-text .gold{color:#991b1b;font-weight:700;text-decoration:underline;text-decoration-color:#fca5a5}
+
+.truth-box{background:#fff1f2;border:1px solid #fecaca;border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:1.5rem}
+.truth-box p{font-size:13.5px;color:#374151;line-height:1.75}
+.truth-box p strong{color:#991b1b}
+
+.transition-block{text-align:center;padding:1.5rem 0 .5rem}
+.transition-block .arrow{font-size:22px;display:block;margin-bottom:.75rem;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.transition-block .cta-text{font-size:17px;font-weight:700;color:#111827;line-height:1.5}
+.transition-block .cta-text .gold{color:#b91c1c}
+
+/* ── HERO ── */
+.hero{background:#fff;padding:2rem 1.5rem 2rem;text-align:center;border-bottom:1px solid rgba(0,0,0,.06)}
+.badge{display:inline-block;background:#7f1d1d;color:#fde68a;font-size:11px;font-weight:700;letter-spacing:2px;padding:5px 16px;border-radius:20px;margin-bottom:1.25rem;text-transform:uppercase}
+.hero h1{font-size:32px;font-weight:800;line-height:1.2;margin-bottom:.5rem;text-transform:uppercase}
+.hero h1 .gold{color:#b91c1c}
+.hero .tagline{font-size:13px;color:#9ca3af;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.75rem}
+.time-pill{display:inline-flex;align-items:center;gap:10px;background:#fff1f2;border:1px solid #fecaca;border-radius:50px;padding:10px 22px;font-size:14px;font-weight:700;color:#991b1b;margin-bottom:.75rem}
+.platform-pill{display:inline-flex;align-items:center;gap:8px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:50px;padding:7px 18px;font-size:13px;color:#6b7280}
+
+/* ── PRICE ── */
+.price-section{margin:0 1.5rem 1.5rem;background:#fff1f2;border:1px solid #fecaca;border-radius:16px;padding:1.25rem;text-align:center}
+.price-label{font-size:12px;color:#9ca3af;letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem}
+.price-original{font-size:15px;color:#9ca3af;text-decoration:line-through;margin-bottom:.25rem}
+.price-free{font-size:36px;font-weight:800;color:#b91c1c;line-height:1.1;margin-bottom:.5rem}
+.price-cond{font-size:13px;color:#6b7280;line-height:1.6}
+.price-cond strong{color:#111827}
+
+/* ── CURRICULUM ── */
+.section{padding:0 1.5rem;margin-bottom:1.5rem}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;color:#b91c1c;text-transform:uppercase;margin-bottom:.75rem}
+.curriculum{background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden}
+.curr-header{padding:1rem 1.25rem;border-bottom:1px solid #f3f4f6}
+.curr-header-text{font-size:14px;font-weight:700;color:#991b1b}
+.lesson{display:flex;align-items:flex-start;gap:12px;padding:11px 1.25rem;border-bottom:1px solid #f3f4f6}
+.lesson:last-child{border-bottom:none}
+.lesson-num{width:24px;height:24px;border-radius:50%;background:#b91c1c;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.lesson-text{font-size:13.5px;color:#374151;line-height:1.5}
+
+/* ── FORM ── */
+.form-wrap{margin:0 1.5rem;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.5rem}
+.form-title{font-size:16px;font-weight:700;color:#111827;margin-bottom:.25rem}
+.form-sub{font-size:13px;color:#6b7280;margin-bottom:1.25rem}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:13px;color:#374151;margin-bottom:.4rem;font-weight:500}
+.field input{width:100%;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;color:#111827;font-family:'Be Vietnam Pro',sans-serif;outline:none;transition:border .2s}
+.field input::placeholder{color:#9ca3af}
+.field input:focus{border-color:#b91c1c;background:#fff}
+.field select{width:100%;padding:12px 14px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;color:#111827;font-family:'Be Vietnam Pro',sans-serif;outline:none;appearance:none;cursor:pointer}
+.field select option{background:#fff;color:#111827}
+.submit-btn{width:100%;padding:16px;background:#b91c1c;color:#fff;font-size:16px;font-weight:700;border:none;border-radius:12px;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;letter-spacing:.3px;transition:background .2s,transform .15s;margin-top:.5rem}
+.submit-btn:hover{background:#991b1b}
+.submit-btn:active{transform:scale(.98)}
+.note{font-size:12px;color:#9ca3af;text-align:center;margin-top:.75rem}
+
+/* ── SUCCESS ── */
+.success-box{display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:16px;padding:2rem;text-align:center;margin:0 1.5rem}
+.success-icon{font-size:48px;margin-bottom:1rem}
+.success-title{font-size:20px;font-weight:800;color:#15803d;margin-bottom:.5rem}
+.success-sub{font-size:14px;color:#374151;margin-bottom:1.5rem;line-height:1.6}
+.group-link-box{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
+.group-link-label{font-size:12px;color:#9ca3af;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.5rem}
+.group-link-url{font-size:14px;color:#1d4ed8;font-weight:600;word-break:break-all;cursor:pointer;text-decoration:underline}
+.copy-btn{width:100%;padding:13px;background:#fff;color:#374151;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;transition:background .2s}
+.copy-btn:hover{background:#f9fafb}
+.copy-success{font-size:12px;color:#15803d;margin-top:.5rem;display:none}
+
+hr.div{border:none;border-top:1px solid #f3f4f6;margin:1.5rem 1.5rem}
+.footer{text-align:center;padding:0 1.5rem;font-size:12px;color:#9ca3af;line-height:2}
+.footer span{color:#b91c1c;font-weight:600}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── PHẦN MỞ ĐẦU ── -->
+  <div class="opening">
+    <div class="opening-questions">
+      <div class="q-item">
+        <div class="q-dot"></div>
+        <div class="q-text">Bạn đi làm <em>10 năm</em> — nhưng tài khoản vẫn về 0 mỗi cuối tháng?</div>
+      </div>
+      <div class="q-item">
+        <div class="q-dot"></div>
+        <div class="q-text">Bạn biết phải "tiết kiệm" và "đầu tư" — nhưng <em>không biết bắt đầu từ đâu?</em></div>
+      </div>
+      <div class="q-item">
+        <div class="q-dot"></div>
+        <div class="q-text">Bạn đang làm việc để <em>trả nợ</em> — thay vì để sống cuộc sống mình muốn?</div>
+      </div>
+      <div class="q-item">
+        <div class="q-dot"></div>
+        <div class="q-text">Hay bạn đang tự hỏi: <em>"Tại sao họ giàu lên được, còn mình thì không?"</em></div>
+      </div>
+    </div>
+
+    <div class="divider-line"><span>Sự thật là</span></div>
+
+    <p class="reveal-text">
+      Không phải vì bạn <strong>lười biếng</strong>.<br>
+      Không phải vì bạn <strong>kém thông minh</strong>.<br>
+      Không phải vì bạn <strong>không đủ cố gắng</strong>.
+    </p>
+
+    <div class="truth-box">
+      <p>Mà vì <strong>không ai dạy bạn</strong> sự khác biệt giữa <strong>kiếm tiền</strong> và <strong>kiếm dòng tiền</strong>.<br><br>
+      Giới tinh hoa không giàu vì họ làm việc nhiều hơn bạn — họ giàu vì họ <span style="color:#991b1b;font-weight:700;text-decoration:underline;text-decoration-color:#fca5a5">hiểu một bộ quy tắc khác</span> mà hệ thống giáo dục không bao giờ dạy.</p>
+    </div>
+
+    <p class="reveal-text">
+      Trong <strong>2 buổi tối</strong>, Khai Minh sẽ mở ra toàn bộ bộ quy tắc đó — từ <span class="gold">tư duy của người Do Thái & Hoa Kiều</span>, đến cách kiến tạo dòng tiền thụ động ngay trong giai đoạn khủng hoảng 2026 này.
+    </p>
+
+    <div class="transition-block">
+      <span class="arrow">↓</span>
+      <div class="cta-text">Đây là chương trình<br><span class="gold">bạn không nên bỏ lỡ</span></div>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="hero">
+    <div class="badge">🔥 Workshop đặc biệt — tháng 6/2026</div>
+    <h1>Kiến Tạo <span class="gold">Dòng Tiền</span><br>Tự Do Sớm</h1>
+    <p class="tagline">Thay tư duy — Đổi kết quả</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div class="time-pill">📅&nbsp; 19h30 &nbsp;|&nbsp; 21 &amp; 22/06/2026</div>
+      <div class="platform-pill">💻&nbsp; Zoom Online — học từ bất kỳ đâu</div>
+    </div>
+  </div>
+
+  <!-- ── GIÁ ── -->
+  <div class="section">
+    <div class="price-section">
+      <div class="price-label">Học phí chương trình</div>
+      <div class="price-original">Trị giá 3.999.000 đ</div>
+      <div class="price-free">MIỄN PHÍ 🎁</div>
+      <div class="price-cond">Đăng ký dưới tên giới thiệu <strong>Tuệ Tâm</strong><br>bạn được tặng vé tham dự hoàn toàn free</div>
+    </div>
+  </div>
+
+  <!-- ── NỘI DUNG ── -->
+  <div class="section">
+    <div class="section-label">Nội dung học</div>
+    <div class="curriculum">
+      <div class="curr-header">
+        <div class="curr-header-text">📚 8 bài học thay đổi tư duy tài chính</div>
+      </div>
+      <div class="lesson"><div class="lesson-num">1</div><div class="lesson-text">Những kiến thức khiến bạn phạm sai lầm mà không hay biết</div></div>
+      <div class="lesson"><div class="lesson-num">2</div><div class="lesson-text">Vòng luẩn quẩn: nghèo + mắc nợ — và cách thoát ra</div></div>
+      <div class="lesson"><div class="lesson-num">3</div><div class="lesson-text">Kiếm tiền ≠ kiếm dòng tiền — sự khác biệt cốt lõi</div></div>
+      <div class="lesson"><div class="lesson-num">4</div><div class="lesson-text">Bí mật của giới tinh hoa ít ai được biết</div></div>
+      <div class="lesson"><div class="lesson-num">5</div><div class="lesson-text">Đỉnh cao trí tuệ của người Do Thái &amp; Hoa Kiều</div></div>
+      <div class="lesson"><div class="lesson-num">6</div><div class="lesson-text">Thời vận đổi đời 2026 — cơ hội không chờ ai</div></div>
+      <div class="lesson"><div class="lesson-num">7</div><div class="lesson-text">Bí kíp vượt khủng hoảng trong thời điểm hiện tại</div></div>
+      <div class="lesson"><div class="lesson-num">8</div><div class="lesson-text">Kiến tạo dòng tiền tự do sớm — lộ trình thực chiến</div></div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- ── FORM ── -->
+  <div class="section" style="margin-bottom:0">
+    <div class="section-label">Đăng ký tham dự</div>
+  </div>
+
+  <div class="form-wrap" id="formSection">
+    <div class="form-title">Nhận vé tham dự miễn phí</div>
+    <div class="form-sub">Bấm nút bên dưới để điền form đăng ký — sau khi gửi xong quay lại đây để nhận link nhóm</div>
+
+    <a href="https://forms.gle/VcnkVtmXaNeQ7UCf9" target="_blank" class="submit-btn" style="display:block;text-decoration:none;text-align:center;margin-bottom:.75rem" onclick="showAfterForm()">
+      📋 Điền form đăng ký ngay
+    </a>
+    <div class="note">Vé trị giá 3.999.000đ · Miễn phí khi đăng ký qua Tuệ Tâm</div>
+
+    <div style="margin-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;text-align:center">
+      <p style="font-size:13px;color:#9ca3af;margin-bottom:.75rem">Đã điền form xong?</p>
+      <button onclick="showAfterForm()" style="background:transparent;border:1px solid #b91c1c;color:#b91c1c;padding:10px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif">
+        Nhận link nhóm Telegram →
+      </button>
+    </div>
+  </div>
+
+  <!-- ── SUCCESS ── -->
+  <div class="success-box" id="successBox">
+    <div class="success-icon">🎉</div>
+    <div class="success-title">Chào mừng bạn!</div>
+    <div class="success-sub">Đăng ký thành công chương trình<br><strong style="color:#fde68a">Kiến Tạo Dòng Tiền Tự Do Sớm</strong><br>19h30 ngày 21 &amp; 22 tháng 6 năm 2026</div>
+    <div class="group-link-box">
+      <div class="group-link-label">Vào nhóm Telegram để nhận vé</div>
+      <div class="group-link-url" id="groupLink" onclick="copyLink()">https://t.me/kientaodongtien</div>
+    </div>
+    <a href="https://t.me/kientaodongtien" target="_blank" style="display:block;width:100%;padding:14px;background:#229ED9;color:#fff;font-size:15px;font-weight:700;text-align:center;border-radius:10px;text-decoration:none;margin-bottom:10px;font-family:'Be Vietnam Pro',sans-serif">✈️ Vào nhóm Telegram ngay</a>
+    <button class="copy-btn" onclick="copyLink()">📋 Sao chép link</button>
+    <div class="copy-success" id="copyMsg">✅ Đã sao chép!</div>
+    <div style="margin-top:1.25rem;font-size:12px;color:#6b7280;line-height:1.8">
+      Vào nhóm để nhận vé và thông tin buổi học nhé<br>
+      Có câu hỏi? Nhắn tin Tuệ Tâm để được hỗ trợ
+    </div>
+  </div>
+
+  <hr class="div">
+  <div class="footer">
+    Zoom Online &nbsp;·&nbsp; <span>19h30 | 21 &amp; 22/06/2026</span><br>
+    Số lượng có hạn — đăng ký sớm để giữ chỗ 🔴<br>
+    Giới thiệu bởi <span>Tuệ Tâm</span>
+  </div>
+
+</div>
+<script>
+function showAfterForm(){
+  document.getElementById('formSection').style.display='none';
+  document.getElementById('successBox').style.display='block';
+  window.scrollTo({top:document.getElementById('successBox').offsetTop-30,behavior:'smooth'});
+}
+function copyLink(){
+  var link=document.getElementById('groupLink').textContent;
+  if(navigator.clipboard){navigator.clipboard.writeText(link).then(showCopyMsg)}
+  else{var el=document.createElement('textarea');el.value=link;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);showCopyMsg()}
+}
+function showCopyMsg(){
+  var msg=document.getElementById('copyMsg');
+  msg.style.display='block';
+  setTimeout(function(){msg.style.display='none'},2500)
+}
+</script>
+</body>
+</html>
