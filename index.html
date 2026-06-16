@@ -190,39 +190,44 @@ hr.div{border:none;border-top:1px solid #f3f4f6;margin:1.5rem 1.5rem}
     <div class="section-label">Đăng ký tham dự</div>
   </div>
 
-  <div class="form-wrap" id="formSection">
-    <div class="form-title">Nhận vé tham dự miễn phí</div>
-    <div class="form-sub">Bấm nút bên dưới để điền form đăng ký — sau khi gửi xong quay lại đây để nhận link nhóm</div>
-
-    <a href="https://forms.gle/VcnkVtmXaNeQ7UCf9" target="_blank" class="submit-btn" style="display:block;text-decoration:none;text-align:center;margin-bottom:.75rem" onclick="showAfterForm()">
-      📋 Điền form đăng ký ngay
-    </a>
-    <div class="note">Vé trị giá 3.999.000đ · Miễn phí khi đăng ký qua Tuệ Tâm</div>
-
-    <div style="margin-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.25rem;text-align:center">
-      <p style="font-size:13px;color:#9ca3af;margin-bottom:.75rem">Đã điền form xong?</p>
-      <button onclick="showAfterForm()" style="background:transparent;border:1px solid #b91c1c;color:#b91c1c;padding:10px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif">
-        Nhận link nhóm Telegram →
-      </button>
+  <!-- ĐỒNG HỒ ĐẾM NGƯỢC -->
+  <div style="margin:0 1.5rem 1.5rem">
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:1.25rem;text-align:center">
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:#b91c1c;text-transform:uppercase;margin-bottom:.75rem">⏰ Hạn đăng ký miễn phí còn</div>
+      <div style="display:flex;justify-content:center;gap:10px" id="countdown">
+        <div style="text-align:center">
+          <div id="cd-days" style="font-size:32px;font-weight:800;color:#111827;line-height:1">00</div>
+          <div style="font-size:11px;color:#9ca3af;margin-top:4px">NGÀY</div>
+        </div>
+        <div style="font-size:32px;font-weight:800;color:#b91c1c;line-height:1;padding-top:0">:</div>
+        <div style="text-align:center">
+          <div id="cd-hours" style="font-size:32px;font-weight:800;color:#111827;line-height:1">00</div>
+          <div style="font-size:11px;color:#9ca3af;margin-top:4px">GIỜ</div>
+        </div>
+        <div style="font-size:32px;font-weight:800;color:#b91c1c;line-height:1;padding-top:0">:</div>
+        <div style="text-align:center">
+          <div id="cd-mins" style="font-size:32px;font-weight:800;color:#111827;line-height:1">00</div>
+          <div style="font-size:11px;color:#9ca3af;margin-top:4px">PHÚT</div>
+        </div>
+        <div style="font-size:32px;font-weight:800;color:#b91c1c;line-height:1;padding-top:0">:</div>
+        <div style="text-align:center">
+          <div id="cd-secs" style="font-size:32px;font-weight:800;color:#b91c1c;line-height:1">00</div>
+          <div style="font-size:11px;color:#9ca3af;margin-top:4px">GIÂY</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#6b7280;margin-top:.75rem">Đăng ký trước 19h30 ngày 21/06/2026 để nhận vé miễn phí</div>
     </div>
   </div>
 
-  <!-- ── SUCCESS ── -->
-  <div class="success-box" id="successBox">
-    <div class="success-icon">🎉</div>
-    <div class="success-title">Chào mừng bạn!</div>
-    <div class="success-sub">Đăng ký thành công chương trình<br><strong style="color:#fde68a">Kiến Tạo Dòng Tiền Tự Do Sớm</strong><br>19h30 ngày 21 &amp; 22 tháng 6 năm 2026</div>
-    <div class="group-link-box">
-      <div class="group-link-label">Vào nhóm Telegram để nhận vé</div>
-      <div class="group-link-url" id="groupLink" onclick="copyLink()">https://t.me/kientaodongtien</div>
-    </div>
-    <a href="https://t.me/kientaodongtien" target="_blank" style="display:block;width:100%;padding:14px;background:#229ED9;color:#fff;font-size:15px;font-weight:700;text-align:center;border-radius:10px;text-decoration:none;margin-bottom:10px;font-family:'Be Vietnam Pro',sans-serif">✈️ Vào nhóm Telegram ngay</a>
-    <button class="copy-btn" onclick="copyLink()">📋 Sao chép link</button>
-    <div class="copy-success" id="copyMsg">✅ Đã sao chép!</div>
-    <div style="margin-top:1.25rem;font-size:12px;color:#6b7280;line-height:1.8">
-      Vào nhóm để nhận vé và thông tin buổi học nhé<br>
-      Có câu hỏi? Nhắn tin Tuệ Tâm để được hỗ trợ
-    </div>
+  <!-- FORM ĐĂNG KÝ -->
+  <div class="form-wrap" id="formSection">
+    <div class="form-title">🎁 Nhận vé tham dự miễn phí</div>
+    <div class="form-sub">Vé trị giá 3.999.000đ — miễn phí khi đăng ký qua Tuệ Tâm</div>
+
+    <a href="https://forms.gle/VcnkVtmXaNeQ7UCf9" target="_blank" class="submit-btn" style="display:block;text-decoration:none;text-align:center">
+      Đăng ký ngay →
+    </a>
+    <div class="note" style="margin-top:.75rem">Sau khi điền form — link nhóm sẽ hiện ra tự động</div>
   </div>
 
   <hr class="div">
@@ -234,21 +239,26 @@ hr.div{border:none;border-top:1px solid #f3f4f6;margin:1.5rem 1.5rem}
 
 </div>
 <script>
-function showAfterForm(){
-  document.getElementById('formSection').style.display='none';
-  document.getElementById('successBox').style.display='block';
-  window.scrollTo({top:document.getElementById('successBox').offsetTop-30,behavior:'smooth'});
+// ĐỒNG HỒ ĐẾM NGƯỢC đến 19h30 ngày 21/06/2026
+var deadline = new Date('2026-06-21T19:30:00+07:00').getTime();
+function updateCountdown(){
+  var now = new Date().getTime();
+  var diff = deadline - now;
+  if(diff <= 0){
+    document.getElementById('countdown').innerHTML='<div style="font-size:16px;font-weight:700;color:#b91c1c">⏰ Hết hạn đăng ký miễn phí</div>';
+    return;
+  }
+  var d = Math.floor(diff/(1000*60*60*24));
+  var h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  var m = Math.floor((diff%(1000*60*60))/(1000*60));
+  var s = Math.floor((diff%(1000*60))/1000);
+  document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
 }
-function copyLink(){
-  var link=document.getElementById('groupLink').textContent;
-  if(navigator.clipboard){navigator.clipboard.writeText(link).then(showCopyMsg)}
-  else{var el=document.createElement('textarea');el.value=link;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);showCopyMsg()}
-}
-function showCopyMsg(){
-  var msg=document.getElementById('copyMsg');
-  msg.style.display='block';
-  setTimeout(function(){msg.style.display='none'},2500)
-}
+updateCountdown();
+setInterval(updateCountdown, 1000);
 </script>
 </body>
 </html>
